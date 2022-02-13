@@ -23,6 +23,8 @@
 		6258217727B9126D0098DF4B /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6258217627B9126D0098DF4B /* Colors.swift */; };
 		6258217927B9185B0098DF4B /* TodoItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6258217827B9185B0098DF4B /* TodoItemCell.swift */; };
 		62C8017527B952E700DD3E60 /* todoapp-network in Frameworks */ = {isa = PBXBuildFile; productRef = 62C8017427B952E700DD3E60 /* todoapp-network */; };
+		62C8017827B9539400DD3E60 /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = 62C8017727B9539400DD3E60 /* Swinject */; };
+		62C8017A27B9539400DD3E60 /* Swinject-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 62C8017927B9539400DD3E60 /* Swinject-Dynamic */; };
 		C06A6DC3C17BA94858EA4874 /* Pods_ios_todoapp_swiftui.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F43440272414CDA148FFB3D2 /* Pods_ios_todoapp_swiftui.framework */; };
 /* End PBXBuildFile section */
 
@@ -56,7 +58,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				C06A6DC3C17BA94858EA4874 /* Pods_ios_todoapp_swiftui.framework in Frameworks */,
+				62C8017A27B9539400DD3E60 /* Swinject-Dynamic in Frameworks */,
 				62C8017527B952E700DD3E60 /* todoapp-network in Frameworks */,
+				62C8017827B9539400DD3E60 /* Swinject in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -214,6 +218,8 @@
 			name = "ios-todoapp-swiftui";
 			packageProductDependencies = (
 				62C8017427B952E700DD3E60 /* todoapp-network */,
+				62C8017727B9539400DD3E60 /* Swinject */,
+				62C8017927B9539400DD3E60 /* Swinject-Dynamic */,
 			);
 			productName = "ios-todoapp-swiftui";
 			productReference = 6258214B27B851F00098DF4B /* ios-todoapp-swiftui.app */;
@@ -245,6 +251,7 @@
 			mainGroup = 6258214227B851F00098DF4B;
 			packageReferences = (
 				62C8017327B952E700DD3E60 /* XCRemoteSwiftPackageReference "todoapp-network" */,
+				62C8017627B9539400DD3E60 /* XCRemoteSwiftPackageReference "Swinject" */,
 			);
 			productRefGroup = 6258214C27B851F00098DF4B /* Products */;
 			projectDirPath = "";
@@ -545,6 +552,14 @@
 				version = 0.0.1;
 			};
 		};
+		62C8017627B9539400DD3E60 /* XCRemoteSwiftPackageReference "Swinject" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Swinject/Swinject.git";
+			requirement = {
+				kind = exactVersion;
+				version = 2.8.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -552,6 +567,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 62C8017327B952E700DD3E60 /* XCRemoteSwiftPackageReference "todoapp-network" */;
 			productName = "todoapp-network";
+		};
+		62C8017727B9539400DD3E60 /* Swinject */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 62C8017627B9539400DD3E60 /* XCRemoteSwiftPackageReference "Swinject" */;
+			productName = Swinject;
+		};
+		62C8017927B9539400DD3E60 /* Swinject-Dynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 62C8017627B9539400DD3E60 /* XCRemoteSwiftPackageReference "Swinject" */;
+			productName = "Swinject-Dynamic";
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
