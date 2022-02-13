@@ -43,6 +43,8 @@
 		6258217227B910B10098DF4B /* swiftui-colors.stencil */ = {isa = PBXFileReference; lastKnownFileType = text; path = "swiftui-colors.stencil"; sourceTree = "<group>"; };
 		6258217627B9126D0098DF4B /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		6258217827B9185B0098DF4B /* TodoItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoItemCell.swift; sourceTree = "<group>"; };
+		62C8017127B94F0600DD3E60 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
+		62C8017227B951C200DD3E60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		91D82DFAEB39FD6890963E04 /* Pods-ios-todoapp-swiftui.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-todoapp-swiftui.debug.xcconfig"; path = "Target Support Files/Pods-ios-todoapp-swiftui/Pods-ios-todoapp-swiftui.debug.xcconfig"; sourceTree = "<group>"; };
 		F43440272414CDA148FFB3D2 /* Pods_ios_todoapp_swiftui.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ios_todoapp_swiftui.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -82,10 +84,12 @@
 		6258214D27B851F00098DF4B /* ios-todoapp-swiftui */ = {
 			isa = PBXGroup;
 			children = (
+				62C8017227B951C200DD3E60 /* Info.plist */,
 				6258214E27B851F00098DF4B /* ios_todoapp_swiftuiApp.swift */,
 				6258215C27B852020098DF4B /* Features */,
 				6258216527B90C040098DF4B /* CustomUIElements */,
 				6258216B27B90D110098DF4B /* Extensions */,
+				62C8017027B94EBF00DD3E60 /* Configurations */,
 				6258217427B911190098DF4B /* Generated */,
 				6258215027B851F00098DF4B /* ContentView.swift */,
 				6258215227B851F20098DF4B /* Assets.xcassets */,
@@ -161,6 +165,14 @@
 				6258217627B9126D0098DF4B /* Colors.swift */,
 			);
 			path = Generated;
+			sourceTree = "<group>";
+		};
+		62C8017027B94EBF00DD3E60 /* Configurations */ = {
+			isa = PBXGroup;
+			children = (
+				62C8017127B94F0600DD3E60 /* Debug.xcconfig */,
+			);
+			path = Configurations;
 			sourceTree = "<group>";
 		};
 		9E86D5DBB41E4A388908D3CC /* Pods */ = {
@@ -316,6 +328,7 @@
 /* Begin XCBuildConfiguration section */
 		6258215727B851F20098DF4B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 62C8017127B94F0600DD3E60 /* Debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -442,6 +455,7 @@
 				DEVELOPMENT_TEAM = QT666FZ6Y2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "ios-todoapp-swiftui/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -472,6 +486,7 @@
 				DEVELOPMENT_TEAM = QT666FZ6Y2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "ios-todoapp-swiftui/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
