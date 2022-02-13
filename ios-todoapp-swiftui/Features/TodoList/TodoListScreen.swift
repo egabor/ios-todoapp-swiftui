@@ -21,6 +21,7 @@ struct TodoListScreen: View {
             title
             list
             showOrHideCompletedItemsButton
+                .padding(.horizontal)
         }
     }
 
@@ -61,6 +62,7 @@ struct TodoListScreen: View {
             action: viewModel.showOrHideCompletedItems,
             label: { Text(viewModel.showOrHideCompletedButtonTitle) }
         )
+            .buttonStyle(PrimaryButtonStyle())
     }
 }
 

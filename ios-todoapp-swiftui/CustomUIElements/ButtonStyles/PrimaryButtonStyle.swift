@@ -21,7 +21,7 @@ public struct PrimaryButtonStyle: ButtonStyle {
     struct Config {
         static let width: CGFloat = .infinity
         static let height: CGFloat = 50
-        static let cornerRadius: CGFloat = 6
+        static let cornerRadius: CGFloat = 12
         static let font: Font = .system(size: 18, weight: .semibold)
 
         static let highlightedScaleEffect: CGFloat = 0.98
