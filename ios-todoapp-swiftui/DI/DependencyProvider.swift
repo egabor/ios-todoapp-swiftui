@@ -7,7 +7,7 @@
 
 import Foundation
 import Swinject
-import todoapp_network
+import TodoAppNetwork
 
 class DependencyProvider {
 
@@ -20,7 +20,7 @@ class DependencyProvider {
     private init() {
         assembler = Assembler(
             [
-                todoapp_network.NetworkAssembly(
+                TodoAppNetwork.NetworkAssembly(
                     logLevel: .trace,
                     baseUrl: config.baseUrl,
                     apiKey: config.apiKey

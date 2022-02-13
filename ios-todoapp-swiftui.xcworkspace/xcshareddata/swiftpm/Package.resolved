@@ -29,12 +29,12 @@
         }
       },
       {
-        "package": "todoapp-network",
-        "repositoryURL": "https://github.com/egabor/todoapp-network",
+        "package": "TodoAppNetwork",
+        "repositoryURL": "https://github.com/egabor/TodoAppNetwork",
         "state": {
           "branch": null,
-          "revision": "07ba76c85fa6b4f5830b6290f1d6857cab0bef71",
-          "version": "0.0.1"
+          "revision": "49c23355e86047698cb4c5356dd8e7504b3a1893",
+          "version": "0.0.2"
         }
       }
     ]

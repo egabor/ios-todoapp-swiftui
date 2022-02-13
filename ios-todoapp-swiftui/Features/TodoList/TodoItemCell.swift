@@ -24,16 +24,10 @@ struct TodoItemCell: View {
 
     @ViewBuilder
     var description: some View {
-        if let description = todoItem.description {
+        if let description = todoItem.desc {
             Text(description)
                 .font(.footnote)
                 .strikethrough(todoItem.isCompleted)
         }
-    }
-}
-
-struct TodoItemCell_Previews: PreviewProvider {
-    static var previews: some View {
-        TodoItemCell(todoItem: .previewObject())
     }
 }

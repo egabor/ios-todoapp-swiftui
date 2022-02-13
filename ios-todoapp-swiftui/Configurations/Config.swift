@@ -32,6 +32,10 @@ class Config {
         value(for: .baseUrl)
     }
 
+    var apiKey: String {
+        value(for: .apiKey)
+    }
+
     private lazy var logger: Logger = { .init(label: bundleId) }()
 
     init() {

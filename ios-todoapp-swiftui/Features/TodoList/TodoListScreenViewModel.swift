@@ -7,26 +7,54 @@
 
 import Foundation
 import Combine
+import TodoAppNetwork
 
 class TodoListScreenViewModel: ObservableObject {
+    @Published var isLoading: Bool = false
     @Published var todoItems: [TodoItem] = []
+
+    private var todoItemCache: [TodoItem] = []
 
     var hideCompletedItems: Bool = false
 
+    @Injected private var todoApi: TodoApiProtocol
+
     init() {
-       updateTodoItems()
+        loadTodoList()
+    }
+
+    func loadTodoList() {
+        isLoading = true
+        Task.init {
+            do {
+                let result = try await todoApi.getTodoList()
+                DispatchQueue.main.async { [weak self] in
+                    self?.todoItemCache = result
+                    self?.processTodoItems()
+                }
+            } catch {
+                print("error")
+            }
+            setLoadingOnMain(to: false)
+        }
     }
 
     func showOrHideCompletedItems() {
         hideCompletedItems.toggle()
-        updateTodoItems()
+        processTodoItems()
     }
 
-    func updateTodoItems() {
+    func processTodoItems() {
         if hideCompletedItems {
-            todoItems = TodoItem.mockItems().filter { $0.isCompleted != true }
+            todoItems = todoItemCache.filter { $0.isCompleted != true }
         } else {
-            todoItems = TodoItem.mockItems()
+            todoItems = todoItemCache
+        }
+    }
+
+    func setLoadingOnMain(to value: Bool) {
+        DispatchQueue.main.async { [weak self] in
+            self?.isLoading = value
         }
     }
 }
