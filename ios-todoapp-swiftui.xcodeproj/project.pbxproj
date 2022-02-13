@@ -22,6 +22,7 @@
 		6258217327B910B10098DF4B /* swiftui-colors.stencil in Sources */ = {isa = PBXBuildFile; fileRef = 6258217227B910B10098DF4B /* swiftui-colors.stencil */; };
 		6258217727B9126D0098DF4B /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6258217627B9126D0098DF4B /* Colors.swift */; };
 		6258217927B9185B0098DF4B /* TodoItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6258217827B9185B0098DF4B /* TodoItemCell.swift */; };
+		62C8017527B952E700DD3E60 /* todoapp-network in Frameworks */ = {isa = PBXBuildFile; productRef = 62C8017427B952E700DD3E60 /* todoapp-network */; };
 		C06A6DC3C17BA94858EA4874 /* Pods_ios_todoapp_swiftui.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F43440272414CDA148FFB3D2 /* Pods_ios_todoapp_swiftui.framework */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +56,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C06A6DC3C17BA94858EA4874 /* Pods_ios_todoapp_swiftui.framework in Frameworks */,
+				62C8017527B952E700DD3E60 /* todoapp-network in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,6 +212,9 @@
 			dependencies = (
 			);
 			name = "ios-todoapp-swiftui";
+			packageProductDependencies = (
+				62C8017427B952E700DD3E60 /* todoapp-network */,
+			);
 			productName = "ios-todoapp-swiftui";
 			productReference = 6258214B27B851F00098DF4B /* ios-todoapp-swiftui.app */;
 			productType = "com.apple.product-type.application";
@@ -238,6 +243,9 @@
 				Base,
 			);
 			mainGroup = 6258214227B851F00098DF4B;
+			packageReferences = (
+				62C8017327B952E700DD3E60 /* XCRemoteSwiftPackageReference "todoapp-network" */,
+			);
 			productRefGroup = 6258214C27B851F00098DF4B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -527,6 +535,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		62C8017327B952E700DD3E60 /* XCRemoteSwiftPackageReference "todoapp-network" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/egabor/todoapp-network";
+			requirement = {
+				kind = exactVersion;
+				version = 0.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		62C8017427B952E700DD3E60 /* todoapp-network */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 62C8017327B952E700DD3E60 /* XCRemoteSwiftPackageReference "todoapp-network" */;
+			productName = "todoapp-network";
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 6258214327B851F00098DF4B /* Project object */;
 }
