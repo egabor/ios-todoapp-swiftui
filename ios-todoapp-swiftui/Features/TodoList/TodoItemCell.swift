@@ -28,6 +28,7 @@ struct TodoItemCell: View {
             Text(description)
                 .font(.footnote)
                 .strikethrough(todoItem.isCompleted)
+                .lineLimit(3)
         }
     }
 }
