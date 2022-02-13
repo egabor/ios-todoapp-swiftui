@@ -15,6 +15,7 @@ struct TodoListScreen: View {
     var body: some View {
         content
             .contentLoading(viewModel.isLoading)
+            .disabled(viewModel.isLoading)
     }
 
     var content: some View {
@@ -38,6 +39,9 @@ struct TodoListScreen: View {
             ForEach(viewModel.todoItems, content: TodoItemCell.init)
         }
         .listStyle(.plain)
+        .refreshable {
+            viewModel.loadTodoList()
+        }
     }
 
     var showOrHideCompletedItemsButton: some View {
