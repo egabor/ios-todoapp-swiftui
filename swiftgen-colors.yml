@@ -1,0 +1,9 @@
+xcassets:
+  inputs:
+    - ios-todoapp-swiftui/Colors.xcassets
+  outputs:
+    params:
+      enumName: Colors
+      publicAccess: true
+    templatePath: "swiftui-colors.stencil"
+    output: ios-todoapp-swiftui/Generated/Colors.swift
