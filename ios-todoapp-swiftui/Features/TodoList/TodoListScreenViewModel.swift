@@ -12,6 +12,7 @@ import TodoAppNetwork
 class TodoListScreenViewModel: ObservableObject {
     @Published var isLoading: Bool = false
     @Published var todoItems: [TodoItem] = []
+    @Published var isPresentingTodoDetails: Bool = false
 
     private var todoItemCache: [TodoItem] = []
 
@@ -56,6 +57,10 @@ class TodoListScreenViewModel: ObservableObject {
         DispatchQueue.main.async { [weak self] in
             self?.isLoading = value
         }
+    }
+
+    func createTodoItem() {
+        isPresentingTodoDetails = true
     }
 }
 

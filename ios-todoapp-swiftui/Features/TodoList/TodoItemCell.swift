@@ -24,7 +24,7 @@ struct TodoItemCell: View {
 
     @ViewBuilder
     var description: some View {
-        if let description = todoItem.desc {
+        if let description = todoItem.desc, !description.isEmpty {
             Text(description)
                 .font(.footnote)
                 .strikethrough(todoItem.isCompleted)

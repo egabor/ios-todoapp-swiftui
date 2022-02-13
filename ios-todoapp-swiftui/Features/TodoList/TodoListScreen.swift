@@ -14,13 +14,19 @@ struct TodoListScreen: View {
 
     var body: some View {
         content
+            .navigationTitle(viewModel.title)
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar(content: { addNewTodoItemButton })
             .contentLoading(viewModel.isLoading)
             .disabled(viewModel.isLoading)
+            .sheet(
+                isPresented: $viewModel.isPresentingTodoDetails,
+                content: { todoDetails() }
+            )
     }
 
     var content: some View {
         VStack {
-            title
             list
             showOrHideCompletedItemsButton
                 .padding(.horizontal)
@@ -29,19 +35,28 @@ struct TodoListScreen: View {
 
     // MARK: - LEVEL 1 Views: Main UI Elements
 
-    var title: some View {
-        Text(viewModel.title)
-            .font(.headline)
+    var addNewTodoItemButton: some View {
+        Button(
+            action: viewModel.createTodoItem,
+            label: { Image(systemName: "plus.circle") }
+        )
     }
 
     var list: some View {
         List {
-            ForEach(viewModel.todoItems, content: TodoItemCell.init)
+            ForEach(viewModel.todoItems, content: cell)
         }
         .listStyle(.plain)
         .refreshable {
             viewModel.loadTodoList()
         }
+    }
+
+    func cell(for todoItem: TodoItem) -> some View {
+        NavigationLink(
+            destination: { todoDetails(todoItem) },
+            label: { TodoItemCell(todoItem: todoItem) }
+        )
     }
 
     var showOrHideCompletedItemsButton: some View {
@@ -50,6 +65,17 @@ struct TodoListScreen: View {
             label: { Text(viewModel.showOrHideCompletedButtonTitle) }
         )
             .buttonStyle(PrimaryButtonStyle())
+    }
+
+    @ViewBuilder
+    func todoDetails(_ todoItem: TodoItem? = nil) -> some View {
+        if let todoItem = todoItem {
+            TodoItemScreen(viewModel: EditTodoItemScreenViewModel(todoItem: todoItem))
+        } else {
+            NavigationView {
+                TodoItemScreen(viewModel: CreateTodoItemScreenViewModel())
+            }
+        }
     }
 }
 

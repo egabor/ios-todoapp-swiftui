@@ -13,7 +13,7 @@
 		6258215627B851F20098DF4B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6258215527B851F20098DF4B /* Preview Assets.xcassets */; };
 		6258216027B852640098DF4B /* TodoListScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6258215F27B852640098DF4B /* TodoListScreen.swift */; };
 		6258216227B8527F0098DF4B /* TodoListScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6258216127B8527F0098DF4B /* TodoListScreenViewModel.swift */; };
-		6258216927B90C2F0098DF4B /* SecondaryButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6258216727B90C2F0098DF4B /* SecondaryButtonStyle.swift */; };
+		6258216927B90C2F0098DF4B /* DestructiveButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6258216727B90C2F0098DF4B /* DestructiveButtonStyle.swift */; };
 		6258216A27B90C2F0098DF4B /* PrimaryButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6258216827B90C2F0098DF4B /* PrimaryButtonStyle.swift */; };
 		6258216D27B90D460098DF4B /* Button+IsLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6258216C27B90D460098DF4B /* Button+IsLoading.swift */; };
 		6258216F27B90DE30098DF4B /* swiftgen-colors.yml in Resources */ = {isa = PBXBuildFile; fileRef = 6258216E27B90DE30098DF4B /* swiftgen-colors.yml */; };
@@ -28,6 +28,13 @@
 		62C8018727B95A7600DD3E60 /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = 62C8018627B95A7600DD3E60 /* Swinject */; };
 		62C8018927B95EDD00DD3E60 /* TodoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C8018827B95EDD00DD3E60 /* TodoItem.swift */; };
 		62C8018C27B961FC00DD3E60 /* LoadingViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C8018B27B961FC00DD3E60 /* LoadingViewModifier.swift */; };
+		62C8018E27B9673B00DD3E60 /* TodoItemScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C8018D27B9673B00DD3E60 /* TodoItemScreen.swift */; };
+		62C8019227B9952F00DD3E60 /* CreateTodoItemScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C8019127B9952F00DD3E60 /* CreateTodoItemScreenViewModel.swift */; };
+		62C8019427B9954400DD3E60 /* EditTodoItemScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C8019327B9954400DD3E60 /* EditTodoItemScreenViewModel.swift */; };
+		62C8019627B9A7A900DD3E60 /* TextFieldStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C8019527B9A7A900DD3E60 /* TextFieldStyle.swift */; };
+		62C8019827B9A7C800DD3E60 /* TextFieldState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C8019727B9A7C800DD3E60 /* TextFieldState.swift */; };
+		62C8019A27B9A7F100DD3E60 /* TextFieldColorSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C8019927B9A7F100DD3E60 /* TextFieldColorSet.swift */; };
+		62C8019D27B9A8A800DD3E60 /* TextFieldTextStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C8019C27B9A8A800DD3E60 /* TextFieldTextStyle.swift */; };
 		C06A6DC3C17BA94858EA4874 /* Pods_ios_todoapp_swiftui.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F43440272414CDA148FFB3D2 /* Pods_ios_todoapp_swiftui.framework */; };
 /* End PBXBuildFile section */
 
@@ -40,7 +47,7 @@
 		6258215527B851F20098DF4B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		6258215F27B852640098DF4B /* TodoListScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListScreen.swift; sourceTree = "<group>"; };
 		6258216127B8527F0098DF4B /* TodoListScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListScreenViewModel.swift; sourceTree = "<group>"; };
-		6258216727B90C2F0098DF4B /* SecondaryButtonStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondaryButtonStyle.swift; sourceTree = "<group>"; };
+		6258216727B90C2F0098DF4B /* DestructiveButtonStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DestructiveButtonStyle.swift; sourceTree = "<group>"; };
 		6258216827B90C2F0098DF4B /* PrimaryButtonStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrimaryButtonStyle.swift; sourceTree = "<group>"; };
 		6258216C27B90D460098DF4B /* Button+IsLoading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Button+IsLoading.swift"; sourceTree = "<group>"; };
 		6258216E27B90DE30098DF4B /* swiftgen-colors.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = "swiftgen-colors.yml"; sourceTree = "<group>"; };
@@ -55,6 +62,14 @@
 		62C8018027B9553400DD3E60 /* Swinject+Injected.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Swinject+Injected.swift"; sourceTree = "<group>"; };
 		62C8018827B95EDD00DD3E60 /* TodoItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoItem.swift; sourceTree = "<group>"; };
 		62C8018B27B961FC00DD3E60 /* LoadingViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewModifier.swift; sourceTree = "<group>"; };
+		62C8018D27B9673B00DD3E60 /* TodoItemScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoItemScreen.swift; sourceTree = "<group>"; };
+		62C8019127B9952F00DD3E60 /* CreateTodoItemScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTodoItemScreenViewModel.swift; sourceTree = "<group>"; };
+		62C8019327B9954400DD3E60 /* EditTodoItemScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTodoItemScreenViewModel.swift; sourceTree = "<group>"; };
+		62C8019527B9A7A900DD3E60 /* TextFieldStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldStyle.swift; sourceTree = "<group>"; };
+		62C8019727B9A7C800DD3E60 /* TextFieldState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldState.swift; sourceTree = "<group>"; };
+		62C8019927B9A7F100DD3E60 /* TextFieldColorSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldColorSet.swift; sourceTree = "<group>"; };
+		62C8019C27B9A8A800DD3E60 /* TextFieldTextStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldTextStyle.swift; sourceTree = "<group>"; };
+		62C8019E27B9A9FB00DD3E60 /* ios-todoapp-swiftui.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "ios-todoapp-swiftui.entitlements"; sourceTree = "<group>"; };
 		91D82DFAEB39FD6890963E04 /* Pods-ios-todoapp-swiftui.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-todoapp-swiftui.debug.xcconfig"; path = "Target Support Files/Pods-ios-todoapp-swiftui/Pods-ios-todoapp-swiftui.debug.xcconfig"; sourceTree = "<group>"; };
 		F43440272414CDA148FFB3D2 /* Pods_ios_todoapp_swiftui.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ios_todoapp_swiftui.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -96,6 +111,7 @@
 		6258214D27B851F00098DF4B /* ios-todoapp-swiftui */ = {
 			isa = PBXGroup;
 			children = (
+				62C8019E27B9A9FB00DD3E60 /* ios-todoapp-swiftui.entitlements */,
 				62C8017227B951C200DD3E60 /* Info.plist */,
 				6258214E27B851F00098DF4B /* ios_todoapp_swiftuiApp.swift */,
 				6258215C27B852020098DF4B /* Features */,
@@ -125,7 +141,7 @@
 			children = (
 				62C8018A27B961EC00DD3E60 /* Loading */,
 				6258215D27B852240098DF4B /* TodoList */,
-				6258215E27B852480098DF4B /* TodoDetails */,
+				6258215E27B852480098DF4B /* TodoItem */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -141,17 +157,21 @@
 			path = TodoList;
 			sourceTree = "<group>";
 		};
-		6258215E27B852480098DF4B /* TodoDetails */ = {
+		6258215E27B852480098DF4B /* TodoItem */ = {
 			isa = PBXGroup;
 			children = (
+				62C8018D27B9673B00DD3E60 /* TodoItemScreen.swift */,
+				62C8019127B9952F00DD3E60 /* CreateTodoItemScreenViewModel.swift */,
+				62C8019327B9954400DD3E60 /* EditTodoItemScreenViewModel.swift */,
 			);
-			path = TodoDetails;
+			path = TodoItem;
 			sourceTree = "<group>";
 		};
 		6258216527B90C040098DF4B /* CustomUIElements */ = {
 			isa = PBXGroup;
 			children = (
 				6258216627B90C170098DF4B /* ButtonStyles */,
+				62C8019B27B9A80B00DD3E60 /* TextFieldStyles */,
 			);
 			path = CustomUIElements;
 			sourceTree = "<group>";
@@ -160,7 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				6258216827B90C2F0098DF4B /* PrimaryButtonStyle.swift */,
-				6258216727B90C2F0098DF4B /* SecondaryButtonStyle.swift */,
+				6258216727B90C2F0098DF4B /* DestructiveButtonStyle.swift */,
 			);
 			path = ButtonStyles;
 			sourceTree = "<group>";
@@ -205,6 +225,17 @@
 				62C8018B27B961FC00DD3E60 /* LoadingViewModifier.swift */,
 			);
 			path = Loading;
+			sourceTree = "<group>";
+		};
+		62C8019B27B9A80B00DD3E60 /* TextFieldStyles */ = {
+			isa = PBXGroup;
+			children = (
+				62C8019527B9A7A900DD3E60 /* TextFieldStyle.swift */,
+				62C8019727B9A7C800DD3E60 /* TextFieldState.swift */,
+				62C8019927B9A7F100DD3E60 /* TextFieldColorSet.swift */,
+				62C8019C27B9A8A800DD3E60 /* TextFieldTextStyle.swift */,
+			);
+			path = TextFieldStyles;
 			sourceTree = "<group>";
 		};
 		9E86D5DBB41E4A388908D3CC /* Pods */ = {
@@ -350,20 +381,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				62C8018C27B961FC00DD3E60 /* LoadingViewModifier.swift in Sources */,
+				62C8019227B9952F00DD3E60 /* CreateTodoItemScreenViewModel.swift in Sources */,
 				62C8018927B95EDD00DD3E60 /* TodoItem.swift in Sources */,
 				62C8018127B9553400DD3E60 /* Swinject+Injected.swift in Sources */,
+				62C8019A27B9A7F100DD3E60 /* TextFieldColorSet.swift in Sources */,
 				6258217927B9185B0098DF4B /* TodoItemCell.swift in Sources */,
 				6258217327B910B10098DF4B /* swiftui-colors.stencil in Sources */,
 				6258217727B9126D0098DF4B /* Colors.swift in Sources */,
 				6258216A27B90C2F0098DF4B /* PrimaryButtonStyle.swift in Sources */,
 				6258216D27B90D460098DF4B /* Button+IsLoading.swift in Sources */,
+				62C8019827B9A7C800DD3E60 /* TextFieldState.swift in Sources */,
 				62C8017F27B953E800DD3E60 /* Config.swift in Sources */,
+				62C8019D27B9A8A800DD3E60 /* TextFieldTextStyle.swift in Sources */,
 				6258216027B852640098DF4B /* TodoListScreen.swift in Sources */,
 				6258215127B851F00098DF4B /* ContentView.swift in Sources */,
 				6258216227B8527F0098DF4B /* TodoListScreenViewModel.swift in Sources */,
 				62C8017D27B953C500DD3E60 /* DependencyProvider.swift in Sources */,
-				6258216927B90C2F0098DF4B /* SecondaryButtonStyle.swift in Sources */,
+				6258216927B90C2F0098DF4B /* DestructiveButtonStyle.swift in Sources */,
+				62C8018E27B9673B00DD3E60 /* TodoItemScreen.swift in Sources */,
+				62C8019627B9A7A900DD3E60 /* TextFieldStyle.swift in Sources */,
 				6258214F27B851F00098DF4B /* ios_todoapp_swiftuiApp.swift in Sources */,
+				62C8019427B9954400DD3E60 /* EditTodoItemScreenViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -493,6 +531,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "ios-todoapp-swiftui/ios-todoapp-swiftui.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ios-todoapp-swiftui/Preview Content\"";
@@ -512,6 +551,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.gaboreszenyi.ios-todoapp-swiftui";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -524,6 +564,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "ios-todoapp-swiftui/ios-todoapp-swiftui.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ios-todoapp-swiftui/Preview Content\"";
@@ -543,6 +584,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.gaboreszenyi.ios-todoapp-swiftui";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

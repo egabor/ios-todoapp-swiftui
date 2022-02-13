@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-public struct SecondaryButtonStyle: ButtonStyle {
+public struct DestructiveButtonStyle: ButtonStyle {
     enum ButtonState {
         case normal
         case highlighted
@@ -21,7 +21,7 @@ public struct SecondaryButtonStyle: ButtonStyle {
     struct Config {
         static let width: CGFloat = .infinity
         static let height: CGFloat = 50
-        static let cornerRadius: CGFloat = 6.0
+        static let cornerRadius: CGFloat = 12.0
         static let font: Font = .system(size: 18, weight: .semibold)
 
         static let highlightedScaleEffect: CGFloat = 0.98
@@ -74,17 +74,17 @@ public struct SecondaryButtonStyle: ButtonStyle {
 
     func backgroundColor(for state: ButtonState) -> Color {
         switch state {
-        case .disabled, .loading: return Color.secondaryButtonDisabledBackground
-        case .highlighted: return Color.secondaryButtonHighlightedBackground
-        default: return Color.secondaryButtonNormalBackground
+        case .disabled, .loading: return Color.destructiveButtonDisabledBackground
+        case .highlighted: return Color.destructiveButtonHighlightedBackground
+        default: return Color.destructiveButtonNormalBackground
         }
     }
 
     func foregroundColor(for state: ButtonState) -> Color {
         switch state {
-        case .disabled, .loading: return Color.secondaryButtonDisabledTitle
-        case .highlighted: return Color.secondaryButtonHighlightedTitle
-        default: return Color.secondaryButtonNormalTitle
+        case .disabled, .loading: return Color.destructiveButtonDisabledTitle
+        case .highlighted: return Color.destructiveButtonHighlightedTitle
+        default: return Color.destructiveButtonNormalTitle
         }
     }
 
@@ -99,9 +99,9 @@ public struct SecondaryButtonStyle: ButtonStyle {
 
     func borderColor(for state: ButtonState) -> Color {
         switch state {
-        case .disabled, .loading: return Color.secondaryButtonDisabledBorder
-        case .highlighted: return Color.secondaryButtonHighlightedBorder
-        default: return Color.secondaryButtonNormalBorder
+        case .disabled, .loading: return Color.destructiveButtonDisabledBorder
+        case .highlighted: return Color.destructiveButtonHighlightedBorder
+        default: return Color.destructiveButtonNormalBorder
         }
     }
 
