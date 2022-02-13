@@ -14,6 +14,7 @@ struct TodoListScreen: View {
 
     var body: some View {
         content
+            .contentLoading(viewModel.isLoading)
     }
 
     var content: some View {
