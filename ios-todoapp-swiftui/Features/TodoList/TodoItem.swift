@@ -47,4 +47,15 @@ extension TodoItem {
             )
         ]
     }
+
+    static func previewObject() -> Self {
+            .init(
+                id: "0001",
+                title: "First mock item",
+                description: "Short description",
+                isCompleted: false,
+                createdAt: Date(),
+                modifiedAt: Date()
+            )
+    }
 }
