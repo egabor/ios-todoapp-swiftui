@@ -9,10 +9,13 @@ import Foundation
 import Combine
 import TodoAppNetwork
 
-class TodoListScreenViewModel: ObservableObject {
+class TodoListScreenViewModel: ObservableObject, ErrorCapable {
     @Published var isLoading: Bool = false
     @Published var todoItems: [TodoItem] = []
     @Published var isPresentingTodoDetails: Bool = false
+
+    @Published var showError: Bool = false
+    @Published var errorMessage: String = ""
 
     private var todoItemCache: [TodoItem] = []
 
@@ -33,8 +36,10 @@ class TodoListScreenViewModel: ObservableObject {
                     self?.todoItemCache = result
                     self?.processTodoItems()
                 }
+            } catch let error as TodoAppNetwork.Common.ErrorMessage.Response {
+                showNetworkErrorOnMain(error: error)
             } catch {
-                print("error")
+                showErrorOnMain(message: "Something went wrong")
             }
             setLoadingOnMain(to: false)
         }
@@ -61,6 +66,14 @@ class TodoListScreenViewModel: ObservableObject {
 
     func createTodoItem() {
         isPresentingTodoDetails = true
+    }
+
+    func createTodoItemViewModel() -> CreateTodoItemScreenViewModel {
+        .init(reloadCallback: loadTodoList)
+    }
+
+    func editTodoItemViewModel(todoItem: TodoItem) -> EditTodoItemScreenViewModel {
+        .init(todoItem: todoItem, reloadCallback: loadTodoList)
     }
 }
 

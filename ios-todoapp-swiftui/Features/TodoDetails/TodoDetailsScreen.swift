@@ -12,7 +12,7 @@ enum TodoItemFocusableField: Hashable {
     case description
 }
 
-struct TodoItemScreen<ViewModel: TodoItemScreenViewModelProtocol>: View {
+struct TodoDetailsScreen<ViewModel: TodoItemScreenViewModelProtocol>: View {
 
     @Environment(\.dismiss) var dismiss
     @ObservedObject var viewModel: ViewModel
@@ -21,13 +21,27 @@ struct TodoItemScreen<ViewModel: TodoItemScreenViewModelProtocol>: View {
     // MARK: - LEVEL 0 Views: Body & Content Wrapper
 
     var body: some View {
-        content
-            .padding()
+        contentScrollView
             .navigationTitle(viewModel.title)
             .navigationBarTitleDisplayMode(.inline)
             .toolbar(content: { ToolbarItem(placement: .navigationBarLeading, content: dismissButton) })
-            .contentLoading(viewModel.isLoading)
-            .disabled(viewModel.isLoading || viewModel.isButtonLoading)
+            .disabled(viewModel.isLoading)
+            .alert(
+                viewModel.errorAlertTitle,
+                isPresented: $viewModel.showError,
+                actions: { Text(viewModel.errorAlertOkButtonTitle) },
+                message: { Text(viewModel.errorMessage) }
+            )
+            .onReceive(viewModel.dismiss) { _ in
+                dismiss()
+            }
+    }
+
+    var contentScrollView: some View {
+        ScrollView {
+            content
+                .padding()
+        }
     }
 
     var content: some View {
@@ -79,7 +93,7 @@ struct TodoItemScreen<ViewModel: TodoItemScreenViewModelProtocol>: View {
     var saveButton: some View {
         Button(viewModel.saveButtonTitle, action: viewModel.save)
             .buttonStyle(PrimaryButtonStyle())
-            .isLoading(viewModel.isButtonLoading)
+            .isLoading(viewModel.isLoading)
     }
 
     @ViewBuilder
@@ -87,14 +101,7 @@ struct TodoItemScreen<ViewModel: TodoItemScreenViewModelProtocol>: View {
         if viewModel.showsDeleteButton {
             Button(viewModel.deleteButtonTitle, action: viewModel.delete)
                 .buttonStyle(DestructiveButtonStyle())
-        }
-    }
-}
-
-struct TodoItemScreen_Previews: PreviewProvider {
-    static var previews: some View {
-        Group {
-            TodoItemScreen(viewModel: CreateTodoItemScreenViewModel())
+                .isLoading(viewModel.isLoading)
         }
     }
 }

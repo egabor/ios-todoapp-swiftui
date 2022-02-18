@@ -23,6 +23,12 @@ struct TodoListScreen: View {
                 isPresented: $viewModel.isPresentingTodoDetails,
                 content: { todoDetails() }
             )
+            .alert(
+                viewModel.errorAlertTitle,
+                isPresented: $viewModel.showError,
+                actions: { Text(viewModel.errorAlertOkButtonTitle) },
+                message: { Text(viewModel.errorMessage) }
+            )
     }
 
     var content: some View {
@@ -70,10 +76,10 @@ struct TodoListScreen: View {
     @ViewBuilder
     func todoDetails(_ todoItem: TodoItem? = nil) -> some View {
         if let todoItem = todoItem {
-            TodoItemScreen(viewModel: EditTodoItemScreenViewModel(todoItem: todoItem))
+            TodoDetailsScreen(viewModel: viewModel.editTodoItemViewModel(todoItem: todoItem))
         } else {
             NavigationView {
-                TodoItemScreen(viewModel: CreateTodoItemScreenViewModel())
+                TodoDetailsScreen(viewModel: viewModel.createTodoItemViewModel())
             }
         }
     }

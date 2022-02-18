@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Combine
 import TodoAppNetwork
 
 class EditTodoItemScreenViewModel: TodoItemScreenViewModelProtocol {
@@ -17,16 +18,22 @@ class EditTodoItemScreenViewModel: TodoItemScreenViewModelProtocol {
     @Published var todoItemDescription: String = ""
     @Published var isCompleted: Bool = false
     @Published var isLoading: Bool = false
-    @Published var isButtonLoading: Bool = false
+    @Published var showError: Bool = false
+    @Published var errorMessage: String = ""
+
+    var dismiss: PassthroughSubject<Void, Never> = .init()
 
     var saveButtonTitle: String { "Save" }
+
+    var reloadCallback: () -> Void
 
     @Injected private var todoApi: TodoApiProtocol
 
     let todoItem: TodoItem
 
-    init(todoItem: TodoItem) {
+    init(todoItem: TodoItem, reloadCallback: @escaping () -> Void) {
         self.todoItem = todoItem
+        self.reloadCallback = reloadCallback
         populate()
     }
 
@@ -37,7 +44,7 @@ class EditTodoItemScreenViewModel: TodoItemScreenViewModelProtocol {
     }
 
     func save() {
-        isButtonLoading = true
+        isLoading = true
         Task.init {
             do {
                 _ = try await todoApi.update(
@@ -50,9 +57,14 @@ class EditTodoItemScreenViewModel: TodoItemScreenViewModelProtocol {
                         modifiedAt: todoItem.modifiedAt),
                     for: todoItem.id
                 )
-                // TODO: dismiss screen & refresh list
+                DispatchQueue.main.async {
+                    self.reloadCallback()
+                    self.dismiss.send()
+                }
+            } catch let error as TodoAppNetwork.Common.ErrorMessage.Response {
+                showNetworkErrorOnMain(error: error)
             } catch {
-                print("error")
+                showErrorOnMain(message: "Something went wrong")
             }
             setLoadingOnMain(to: false)
         }
@@ -63,17 +75,14 @@ class EditTodoItemScreenViewModel: TodoItemScreenViewModelProtocol {
         Task.init {
             do {
                 _ = try await todoApi.deleteTodoItem(for: todoItem.id) // TODO: check status code why 405
+                reloadOnMain()
+                dismissOnMain()
+            } catch let error as TodoAppNetwork.Common.ErrorMessage.Response {
+                showNetworkErrorOnMain(error: error)
             } catch {
-                print("error")
+                showErrorOnMain(message: "Something went wrong")
             }
             setLoadingOnMain(to: false)
-        }
-    }
-
-    func setLoadingOnMain(to value: Bool) {
-        DispatchQueue.main.async { [weak self] in
-            self?.isButtonLoading = value
-            self?.isLoading = value
         }
     }
 }
