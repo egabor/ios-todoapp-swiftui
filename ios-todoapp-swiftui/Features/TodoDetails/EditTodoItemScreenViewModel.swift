@@ -18,6 +18,7 @@ class EditTodoItemScreenViewModel: TodoItemScreenViewModelProtocol {
     @Published var todoItemDescription: String = ""
     @Published var isCompleted: Bool = false
     @Published var isLoading: Bool = false
+    @Published var isButtonLoading: Bool = false
     @Published var showError: Bool = false
     @Published var errorMessage: String = ""
 
@@ -44,7 +45,7 @@ class EditTodoItemScreenViewModel: TodoItemScreenViewModelProtocol {
     }
 
     func save() {
-        isLoading = true
+        isButtonLoading = true
         Task.init {
             do {
                 _ = try await todoApi.update(
@@ -66,7 +67,7 @@ class EditTodoItemScreenViewModel: TodoItemScreenViewModelProtocol {
             } catch {
                 showErrorOnMain(message: "Something went wrong")
             }
-            setLoadingOnMain(to: false)
+            setButtonLoadingOnMain(to: false)
         }
     }
 

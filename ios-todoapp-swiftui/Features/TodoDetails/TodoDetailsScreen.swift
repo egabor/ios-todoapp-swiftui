@@ -25,7 +25,8 @@ struct TodoDetailsScreen<ViewModel: TodoItemScreenViewModelProtocol>: View {
             .navigationTitle(viewModel.title)
             .navigationBarTitleDisplayMode(.inline)
             .toolbar(content: { ToolbarItem(placement: .navigationBarLeading, content: dismissButton) })
-            .disabled(viewModel.isLoading)
+            .contentLoading(viewModel.isLoading)
+            .disabled(viewModel.isLoading || viewModel.isButtonLoading)
             .alert(
                 viewModel.errorAlertTitle,
                 isPresented: $viewModel.showError,
@@ -93,7 +94,7 @@ struct TodoDetailsScreen<ViewModel: TodoItemScreenViewModelProtocol>: View {
     var saveButton: some View {
         Button(viewModel.saveButtonTitle, action: viewModel.save)
             .buttonStyle(PrimaryButtonStyle())
-            .isLoading(viewModel.isLoading)
+            .isLoading(viewModel.isButtonLoading)
     }
 
     @ViewBuilder
@@ -101,7 +102,6 @@ struct TodoDetailsScreen<ViewModel: TodoItemScreenViewModelProtocol>: View {
         if viewModel.showsDeleteButton {
             Button(viewModel.deleteButtonTitle, action: viewModel.delete)
                 .buttonStyle(DestructiveButtonStyle())
-                .isLoading(viewModel.isLoading)
         }
     }
 }

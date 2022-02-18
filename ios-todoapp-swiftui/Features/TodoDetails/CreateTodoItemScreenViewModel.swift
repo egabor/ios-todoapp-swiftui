@@ -21,6 +21,18 @@ extension LoadingCapable {
     }
 }
 
+protocol ButtonLoadingCapable: AnyObject {
+    var isButtonLoading: Bool { get set }
+}
+
+extension ButtonLoadingCapable {
+    func setButtonLoadingOnMain(to value: Bool) {
+        DispatchQueue.main.async { [weak self] in
+            self?.isButtonLoading = value
+        }
+    }
+}
+
 protocol ErrorCapable: AnyObject {
     var showError: Bool { get set }
     var errorMessage: String { get set }
@@ -50,7 +62,7 @@ extension ErrorCapable {
     }
 }
 
-protocol TodoItemScreenViewModelProtocol: ObservableObject, ErrorCapable, LoadingCapable {
+protocol TodoItemScreenViewModelProtocol: ObservableObject, ErrorCapable, LoadingCapable, ButtonLoadingCapable {
 
     var showsDismissButton: Bool { get }
     var showsDeleteButton: Bool { get }
@@ -106,6 +118,7 @@ class CreateTodoItemScreenViewModel: TodoItemScreenViewModelProtocol {
     @Published var todoItemDescription: String = ""
     @Published var isCompleted: Bool = false
     @Published var isLoading: Bool = false
+    @Published var isButtonLoading: Bool = false
     @Published var showError: Bool = false
     @Published var errorMessage: String = ""
 
@@ -122,7 +135,7 @@ class CreateTodoItemScreenViewModel: TodoItemScreenViewModelProtocol {
     }
 
     func save() {
-        isLoading = true
+        isButtonLoading = true
         Task.init {
             do {
                 _ = try await todoApi.createNew(
@@ -139,7 +152,7 @@ class CreateTodoItemScreenViewModel: TodoItemScreenViewModelProtocol {
             } catch let error as TodoAppNetwork.Common.ErrorMessage.Response {
                 showNetworkErrorOnMain(error: error)
             }
-            setLoadingOnMain(to: false)
+            setButtonLoadingOnMain(to: false)
         }
     }
 
