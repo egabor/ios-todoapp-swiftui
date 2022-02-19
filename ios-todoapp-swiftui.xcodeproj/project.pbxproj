@@ -16,20 +16,16 @@
 		6258216927B90C2F0098DF4B /* DestructiveButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6258216727B90C2F0098DF4B /* DestructiveButtonStyle.swift */; };
 		6258216A27B90C2F0098DF4B /* PrimaryButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6258216827B90C2F0098DF4B /* PrimaryButtonStyle.swift */; };
 		6258216D27B90D460098DF4B /* Button+IsLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6258216C27B90D460098DF4B /* Button+IsLoading.swift */; };
-		6258216F27B90DE30098DF4B /* swiftgen-colors.yml in Resources */ = {isa = PBXBuildFile; fileRef = 6258216E27B90DE30098DF4B /* swiftgen-colors.yml */; };
 		6258217127B90E650098DF4B /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6258217027B90E650098DF4B /* Colors.xcassets */; };
-		6258217327B910B10098DF4B /* swiftui-colors.stencil in Sources */ = {isa = PBXBuildFile; fileRef = 6258217227B910B10098DF4B /* swiftui-colors.stencil */; };
 		6258217727B9126D0098DF4B /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6258217627B9126D0098DF4B /* Colors.swift */; };
 		6258217927B9185B0098DF4B /* TodoItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6258217827B9185B0098DF4B /* TodoItemCell.swift */; };
 		625BA3B227C176BE00FED610 /* LoadingCapable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625BA3B127C176BE00FED610 /* LoadingCapable.swift */; };
 		625BA3B427C176C900FED610 /* ButtonLoadingCapable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625BA3B327C176C900FED610 /* ButtonLoadingCapable.swift */; };
 		625BA3B627C176EF00FED610 /* ErrorCapable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625BA3B527C176EF00FED610 /* ErrorCapable.swift */; };
 		625BA3B827C1774800FED610 /* TodoDetailsScreenViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625BA3B727C1774800FED610 /* TodoDetailsScreenViewModelProtocol.swift */; };
-		625BA3BA27C177F100FED610 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 625BA3B927C177F100FED610 /* README.md */; };
 		625BA3BC27C17C0B00FED610 /* TodoListScreen.strings in Resources */ = {isa = PBXBuildFile; fileRef = 625BA3BB27C17C0B00FED610 /* TodoListScreen.strings */; };
 		625BA3BE27C17C3E00FED610 /* TodoDetailsScreen.strings in Resources */ = {isa = PBXBuildFile; fileRef = 625BA3BD27C17C3E00FED610 /* TodoDetailsScreen.strings */; };
 		625BA3C027C17D1600FED610 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 625BA3BF27C17D1600FED610 /* Localizable.strings */; };
-		62965D5627C1865E00EEB7E6 /* .rswiftignore.txt in Resources */ = {isa = PBXBuildFile; fileRef = 62965D5527C1865E00EEB7E6 /* .rswiftignore.txt */; };
 		62965D5927C1871700EEB7E6 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62965D5827C1871700EEB7E6 /* R.generated.swift */; };
 		62C8017D27B953C500DD3E60 /* DependencyProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C8017C27B953C500DD3E60 /* DependencyProvider.swift */; };
 		62C8017F27B953E800DD3E60 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C8017E27B953E800DD3E60 /* Config.swift */; };
@@ -73,8 +69,8 @@
 		625BA3BB27C17C0B00FED610 /* TodoListScreen.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = TodoListScreen.strings; sourceTree = "<group>"; };
 		625BA3BD27C17C3E00FED610 /* TodoDetailsScreen.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = TodoDetailsScreen.strings; sourceTree = "<group>"; };
 		625BA3BF27C17D1600FED610 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
-		62965D5527C1865E00EEB7E6 /* .rswiftignore.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .rswiftignore.txt; sourceTree = "<group>"; };
 		62965D5827C1871700EEB7E6 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
+		62965D5A27C18EFB00EEB7E6 /* .rswiftignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .rswiftignore; sourceTree = "<group>"; };
 		62C8017127B94F0600DD3E60 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
 		62C8017227B951C200DD3E60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		62C8017C27B953C500DD3E60 /* DependencyProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyProvider.swift; sourceTree = "<group>"; };
@@ -114,7 +110,7 @@
 				625BA3B927C177F100FED610 /* README.md */,
 				6258216E27B90DE30098DF4B /* swiftgen-colors.yml */,
 				6258217227B910B10098DF4B /* swiftui-colors.stencil */,
-				62965D5527C1865E00EEB7E6 /* .rswiftignore.txt */,
+				62965D5A27C18EFB00EEB7E6 /* .rswiftignore */,
 				6258214D27B851F00098DF4B /* ios-todoapp-swiftui */,
 				6258214C27B851F00098DF4B /* Products */,
 				9E86D5DBB41E4A388908D3CC /* Pods */,
@@ -366,11 +362,8 @@
 				6258215627B851F20098DF4B /* Preview Assets.xcassets in Resources */,
 				625BA3BC27C17C0B00FED610 /* TodoListScreen.strings in Resources */,
 				6258217127B90E650098DF4B /* Colors.xcassets in Resources */,
-				625BA3BA27C177F100FED610 /* README.md in Resources */,
 				6258215327B851F20098DF4B /* Assets.xcassets in Resources */,
-				62965D5627C1865E00EEB7E6 /* .rswiftignore.txt in Resources */,
 				625BA3C027C17D1600FED610 /* Localizable.strings in Resources */,
-				6258216F27B90DE30098DF4B /* swiftgen-colors.yml in Resources */,
 				625BA3BE27C17C3E00FED610 /* TodoDetailsScreen.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -469,7 +462,6 @@
 				62C8019A27B9A7F100DD3E60 /* TextFieldColorSet.swift in Sources */,
 				625BA3B627C176EF00FED610 /* ErrorCapable.swift in Sources */,
 				6258217927B9185B0098DF4B /* TodoItemCell.swift in Sources */,
-				6258217327B910B10098DF4B /* swiftui-colors.stencil in Sources */,
 				6258217727B9126D0098DF4B /* Colors.swift in Sources */,
 				6258216A27B90C2F0098DF4B /* PrimaryButtonStyle.swift in Sources */,
 				6258216D27B90D460098DF4B /* Button+IsLoading.swift in Sources */,
