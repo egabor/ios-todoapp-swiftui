@@ -9,11 +9,13 @@ import Foundation
 import Combine
 import TodoAppNetwork
 
-class EditTodoItemScreenViewModel: TodoItemScreenViewModelProtocol {
+class EditTodoItemScreenViewModel: TodoDetailsScreenViewModelProtocol {
     var showsDismissButton: Bool { false }
     var showsDeleteButton: Bool { true }
-    var title: String { "Edit Todo" }
     
+    var title: String { R.string.todoDetailsScreen.editTitle() }
+    var saveButtonTitle: String { R.string.todoDetailsScreen.editButtonSave() }
+
     @Published var todoItemTitle: String = ""
     @Published var todoItemDescription: String = ""
     @Published var isCompleted: Bool = false
@@ -23,8 +25,6 @@ class EditTodoItemScreenViewModel: TodoItemScreenViewModelProtocol {
     @Published var errorMessage: String = ""
 
     var dismiss: PassthroughSubject<Void, Never> = .init()
-
-    var saveButtonTitle: String { "Save" }
 
     var reloadCallback: () -> Void
 
@@ -65,7 +65,7 @@ class EditTodoItemScreenViewModel: TodoItemScreenViewModelProtocol {
             } catch let error as TodoAppNetwork.Common.ErrorMessage.Response {
                 showNetworkErrorOnMain(error: error)
             } catch {
-                showErrorOnMain(message: "Something went wrong")
+                showErrorOnMain(message: R.string.localizable.alertMessageGeneral())
             }
             setButtonLoadingOnMain(to: false)
         }
@@ -75,13 +75,13 @@ class EditTodoItemScreenViewModel: TodoItemScreenViewModelProtocol {
         isLoading = true
         Task.init {
             do {
-                _ = try await todoApi.deleteTodoItem(for: todoItem.id) // TODO: check status code why 405
+                _ = try await todoApi.deleteTodoItem(for: todoItem.id)
                 reloadOnMain()
                 dismissOnMain()
             } catch let error as TodoAppNetwork.Common.ErrorMessage.Response {
                 showNetworkErrorOnMain(error: error)
             } catch {
-                showErrorOnMain(message: "Something went wrong")
+                showErrorOnMain(message: R.string.localizable.alertMessageGeneral())
             }
             setLoadingOnMain(to: false)
         }

@@ -39,7 +39,7 @@ class TodoListScreenViewModel: ObservableObject, ErrorCapable {
             } catch let error as TodoAppNetwork.Common.ErrorMessage.Response {
                 showNetworkErrorOnMain(error: error)
             } catch {
-                showErrorOnMain(message: "Something went wrong")
+                showErrorOnMain(message: R.string.localizable.alertMessageGeneral())
             }
             setLoadingOnMain(to: false)
         }
@@ -81,10 +81,10 @@ class TodoListScreenViewModel: ObservableObject, ErrorCapable {
 
 extension TodoListScreenViewModel {
     var title: String {
-        "Todo Items"
+        R.string.todoListScreen.title()
     }
 
     var showOrHideCompletedButtonTitle: String {
-        hideCompletedItems ? "Show All Items" : "Hide Completed Items"
+        hideCompletedItems ? R.string.todoListScreen.buttonShowAllItems() : R.string.todoListScreen.buttonHideCompletedItems()
     }
 }

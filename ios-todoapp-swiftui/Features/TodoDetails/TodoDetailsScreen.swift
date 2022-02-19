@@ -7,16 +7,16 @@
 
 import SwiftUI
 
-enum TodoItemFocusableField: Hashable {
+enum TodoDetailsFocusableField: Hashable {
     case title
     case description
 }
 
-struct TodoDetailsScreen<ViewModel: TodoItemScreenViewModelProtocol>: View {
+struct TodoDetailsScreen<ViewModel: TodoDetailsScreenViewModelProtocol>: View {
 
     @Environment(\.dismiss) var dismiss
     @ObservedObject var viewModel: ViewModel
-    @FocusState private var focus: TodoItemFocusableField?
+    @FocusState private var focus: TodoDetailsFocusableField?
 
     // MARK: - LEVEL 0 Views: Body & Content Wrapper
 
@@ -73,13 +73,13 @@ struct TodoDetailsScreen<ViewModel: TodoItemScreenViewModelProtocol>: View {
             viewModel.titleTextFieldPlaceholder,
             text: $viewModel.todoItemTitle
         )
-            .focused($focus, equals: TodoItemFocusableField.title)
+            .focused($focus, equals: TodoDetailsFocusableField.title)
             .modifier(TextFieldStyle(state: .normal(focus == .title)))
     }
 
     var todoDescriptionTextEditor: some View {
         TextEditor(text: $viewModel.todoItemDescription)
-            .focused($focus, equals: TodoItemFocusableField.description)
+            .focused($focus, equals: TodoDetailsFocusableField.description)
             .modifier(TextFieldStyle(state: .normal(focus == .description)))
             .frame(height: 200)
     }
@@ -87,7 +87,7 @@ struct TodoDetailsScreen<ViewModel: TodoItemScreenViewModelProtocol>: View {
     var isCompletedToggle: some View {
         Toggle(
             isOn: $viewModel.isCompleted,
-            label: { Text("Completed") }
+            label: { Text(viewModel.completedToggleTitle) }
         )
     }
 

@@ -7,5 +7,6 @@ target 'ios-todoapp-swiftui' do
 
   # Pods for ios-todoapp-swiftui
   pod 'SwiftGen', '~> 6.0'
+  pod 'R.swift', '~> 5.4.0'
 
 end

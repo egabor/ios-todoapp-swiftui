@@ -1,0 +1,23 @@
+/* 
+  TodoDetailsScreen.strings
+  ios-todoapp-swiftui
+
+  Created by Eszenyi Gábor on 2022. 02. 19..
+  
+*/
+
+// MARK: - Common
+
+"input.title.placeholder" = "Todo Title";
+"toggle.completed.title" = "Completed";
+
+// MARK: - Create
+
+"create.title" = "Create new";
+"create.button.create" = "Create";
+
+// MARK: - Edit
+
+"edit.title" = "Edit Todo";
+"edit.button.save" = "Save";
+"edit.button.delete" = "Delete";

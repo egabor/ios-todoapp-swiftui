@@ -21,6 +21,16 @@
 		6258217327B910B10098DF4B /* swiftui-colors.stencil in Sources */ = {isa = PBXBuildFile; fileRef = 6258217227B910B10098DF4B /* swiftui-colors.stencil */; };
 		6258217727B9126D0098DF4B /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6258217627B9126D0098DF4B /* Colors.swift */; };
 		6258217927B9185B0098DF4B /* TodoItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6258217827B9185B0098DF4B /* TodoItemCell.swift */; };
+		625BA3B227C176BE00FED610 /* LoadingCapable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625BA3B127C176BE00FED610 /* LoadingCapable.swift */; };
+		625BA3B427C176C900FED610 /* ButtonLoadingCapable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625BA3B327C176C900FED610 /* ButtonLoadingCapable.swift */; };
+		625BA3B627C176EF00FED610 /* ErrorCapable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625BA3B527C176EF00FED610 /* ErrorCapable.swift */; };
+		625BA3B827C1774800FED610 /* TodoDetailsScreenViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625BA3B727C1774800FED610 /* TodoDetailsScreenViewModelProtocol.swift */; };
+		625BA3BA27C177F100FED610 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 625BA3B927C177F100FED610 /* README.md */; };
+		625BA3BC27C17C0B00FED610 /* TodoListScreen.strings in Resources */ = {isa = PBXBuildFile; fileRef = 625BA3BB27C17C0B00FED610 /* TodoListScreen.strings */; };
+		625BA3BE27C17C3E00FED610 /* TodoDetailsScreen.strings in Resources */ = {isa = PBXBuildFile; fileRef = 625BA3BD27C17C3E00FED610 /* TodoDetailsScreen.strings */; };
+		625BA3C027C17D1600FED610 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 625BA3BF27C17D1600FED610 /* Localizable.strings */; };
+		62965D5627C1865E00EEB7E6 /* .rswiftignore.txt in Resources */ = {isa = PBXBuildFile; fileRef = 62965D5527C1865E00EEB7E6 /* .rswiftignore.txt */; };
+		62965D5927C1871700EEB7E6 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62965D5827C1871700EEB7E6 /* R.generated.swift */; };
 		62C8017D27B953C500DD3E60 /* DependencyProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C8017C27B953C500DD3E60 /* DependencyProvider.swift */; };
 		62C8017F27B953E800DD3E60 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C8017E27B953E800DD3E60 /* Config.swift */; };
 		62C8018127B9553400DD3E60 /* Swinject+Injected.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C8018027B9553400DD3E60 /* Swinject+Injected.swift */; };
@@ -55,6 +65,16 @@
 		6258217227B910B10098DF4B /* swiftui-colors.stencil */ = {isa = PBXFileReference; lastKnownFileType = text; path = "swiftui-colors.stencil"; sourceTree = "<group>"; };
 		6258217627B9126D0098DF4B /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		6258217827B9185B0098DF4B /* TodoItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoItemCell.swift; sourceTree = "<group>"; };
+		625BA3B127C176BE00FED610 /* LoadingCapable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingCapable.swift; sourceTree = "<group>"; };
+		625BA3B327C176C900FED610 /* ButtonLoadingCapable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonLoadingCapable.swift; sourceTree = "<group>"; };
+		625BA3B527C176EF00FED610 /* ErrorCapable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorCapable.swift; sourceTree = "<group>"; };
+		625BA3B727C1774800FED610 /* TodoDetailsScreenViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoDetailsScreenViewModelProtocol.swift; sourceTree = "<group>"; };
+		625BA3B927C177F100FED610 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		625BA3BB27C17C0B00FED610 /* TodoListScreen.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = TodoListScreen.strings; sourceTree = "<group>"; };
+		625BA3BD27C17C3E00FED610 /* TodoDetailsScreen.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = TodoDetailsScreen.strings; sourceTree = "<group>"; };
+		625BA3BF27C17D1600FED610 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		62965D5527C1865E00EEB7E6 /* .rswiftignore.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .rswiftignore.txt; sourceTree = "<group>"; };
+		62965D5827C1871700EEB7E6 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		62C8017127B94F0600DD3E60 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
 		62C8017227B951C200DD3E60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		62C8017C27B953C500DD3E60 /* DependencyProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyProvider.swift; sourceTree = "<group>"; };
@@ -91,8 +111,10 @@
 		6258214227B851F00098DF4B = {
 			isa = PBXGroup;
 			children = (
+				625BA3B927C177F100FED610 /* README.md */,
 				6258216E27B90DE30098DF4B /* swiftgen-colors.yml */,
 				6258217227B910B10098DF4B /* swiftui-colors.stencil */,
+				62965D5527C1865E00EEB7E6 /* .rswiftignore.txt */,
 				6258214D27B851F00098DF4B /* ios-todoapp-swiftui */,
 				6258214C27B851F00098DF4B /* Products */,
 				9E86D5DBB41E4A388908D3CC /* Pods */,
@@ -115,6 +137,7 @@
 				62C8017227B951C200DD3E60 /* Info.plist */,
 				6258214E27B851F00098DF4B /* ios_todoapp_swiftuiApp.swift */,
 				6258215C27B852020098DF4B /* Features */,
+				625BA3B027C176AA00FED610 /* Protocols */,
 				6258216527B90C040098DF4B /* CustomUIElements */,
 				6258216B27B90D110098DF4B /* Extensions */,
 				62C8017B27B953AD00DD3E60 /* DI */,
@@ -142,6 +165,7 @@
 				62C8018A27B961EC00DD3E60 /* Loading */,
 				6258215D27B852240098DF4B /* TodoList */,
 				6258215E27B852480098DF4B /* TodoDetails */,
+				625BA3BF27C17D1600FED610 /* Localizable.strings */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -153,6 +177,7 @@
 				6258216127B8527F0098DF4B /* TodoListScreenViewModel.swift */,
 				6258217827B9185B0098DF4B /* TodoItemCell.swift */,
 				62C8018827B95EDD00DD3E60 /* TodoItem.swift */,
+				625BA3BB27C17C0B00FED610 /* TodoListScreen.strings */,
 			);
 			path = TodoList;
 			sourceTree = "<group>";
@@ -161,8 +186,10 @@
 			isa = PBXGroup;
 			children = (
 				62C8018D27B9673B00DD3E60 /* TodoDetailsScreen.swift */,
+				625BA3B727C1774800FED610 /* TodoDetailsScreenViewModelProtocol.swift */,
 				62C8019127B9952F00DD3E60 /* CreateTodoItemScreenViewModel.swift */,
 				62C8019327B9954400DD3E60 /* EditTodoItemScreenViewModel.swift */,
+				625BA3BD27C17C3E00FED610 /* TodoDetailsScreen.strings */,
 			);
 			path = TodoDetails;
 			sourceTree = "<group>";
@@ -196,9 +223,20 @@
 		6258217427B911190098DF4B /* Generated */ = {
 			isa = PBXGroup;
 			children = (
+				62965D5827C1871700EEB7E6 /* R.generated.swift */,
 				6258217627B9126D0098DF4B /* Colors.swift */,
 			);
 			path = Generated;
+			sourceTree = "<group>";
+		};
+		625BA3B027C176AA00FED610 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				625BA3B127C176BE00FED610 /* LoadingCapable.swift */,
+				625BA3B327C176C900FED610 /* ButtonLoadingCapable.swift */,
+				625BA3B527C176EF00FED610 /* ErrorCapable.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		62C8017027B94EBF00DD3E60 /* Configurations */ = {
@@ -263,10 +301,12 @@
 			buildConfigurationList = 6258215927B851F20098DF4B /* Build configuration list for PBXNativeTarget "ios-todoapp-swiftui" */;
 			buildPhases = (
 				D9C1696324737AC59F877DC7 /* [CP] Check Pods Manifest.lock */,
+				62965D5727C1866900EEB7E6 /* R.swift CodeGen */,
 				6258217527B911900098DF4B /* SwiftGen Colors */,
 				6258214727B851F00098DF4B /* Sources */,
 				6258214827B851F00098DF4B /* Frameworks */,
 				6258214927B851F00098DF4B /* Resources */,
+				9AAE5489F2FE4FB33AD97412 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -324,9 +364,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				6258215627B851F20098DF4B /* Preview Assets.xcassets in Resources */,
+				625BA3BC27C17C0B00FED610 /* TodoListScreen.strings in Resources */,
 				6258217127B90E650098DF4B /* Colors.xcassets in Resources */,
+				625BA3BA27C177F100FED610 /* README.md in Resources */,
 				6258215327B851F20098DF4B /* Assets.xcassets in Resources */,
+				62965D5627C1865E00EEB7E6 /* .rswiftignore.txt in Resources */,
+				625BA3C027C17D1600FED610 /* Localizable.strings in Resources */,
 				6258216F27B90DE30098DF4B /* swiftgen-colors.yml in Resources */,
+				625BA3BE27C17C3E00FED610 /* TodoDetailsScreen.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -350,6 +395,43 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if [[ -f \"${PODS_ROOT}/SwiftGen/bin/swiftgen\" ]]; then\n  \"${PODS_ROOT}/SwiftGen/bin/swiftgen\" config run --config $SRCROOT/swiftgen-colors.yml\nelse\n  echo \"warning: SwiftGen is not installed. Run 'pod install --repo-update' to install it.\"\nfi\n\n";
+		};
+		62965D5727C1866900EEB7E6 /* R.swift CodeGen */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$TEMP_DIR/rswift-lastrun",
+			);
+			name = "R.swift CodeGen";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$SRCROOT/ios-todoapp-swiftui/Generated/R.generated.swift",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/ios-todoapp-swiftui/Generated/R.generated.swift\"\n";
+		};
+		9AAE5489F2FE4FB33AD97412 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ios-todoapp-swiftui/Pods-ios-todoapp-swiftui-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ios-todoapp-swiftui/Pods-ios-todoapp-swiftui-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ios-todoapp-swiftui/Pods-ios-todoapp-swiftui-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 		D9C1696324737AC59F877DC7 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -385,6 +467,7 @@
 				62C8018927B95EDD00DD3E60 /* TodoItem.swift in Sources */,
 				62C8018127B9553400DD3E60 /* Swinject+Injected.swift in Sources */,
 				62C8019A27B9A7F100DD3E60 /* TextFieldColorSet.swift in Sources */,
+				625BA3B627C176EF00FED610 /* ErrorCapable.swift in Sources */,
 				6258217927B9185B0098DF4B /* TodoItemCell.swift in Sources */,
 				6258217327B910B10098DF4B /* swiftui-colors.stencil in Sources */,
 				6258217727B9126D0098DF4B /* Colors.swift in Sources */,
@@ -395,9 +478,13 @@
 				62C8019D27B9A8A800DD3E60 /* TextFieldTextStyle.swift in Sources */,
 				6258216027B852640098DF4B /* TodoListScreen.swift in Sources */,
 				6258215127B851F00098DF4B /* ContentView.swift in Sources */,
+				625BA3B427C176C900FED610 /* ButtonLoadingCapable.swift in Sources */,
+				625BA3B827C1774800FED610 /* TodoDetailsScreenViewModelProtocol.swift in Sources */,
 				6258216227B8527F0098DF4B /* TodoListScreenViewModel.swift in Sources */,
 				62C8017D27B953C500DD3E60 /* DependencyProvider.swift in Sources */,
+				62965D5927C1871700EEB7E6 /* R.generated.swift in Sources */,
 				6258216927B90C2F0098DF4B /* DestructiveButtonStyle.swift in Sources */,
+				625BA3B227C176BE00FED610 /* LoadingCapable.swift in Sources */,
 				62C8018E27B9673B00DD3E60 /* TodoDetailsScreen.swift in Sources */,
 				62C8019627B9A7A900DD3E60 /* TextFieldStyle.swift in Sources */,
 				6258214F27B851F00098DF4B /* ios_todoapp_swiftuiApp.swift in Sources */,

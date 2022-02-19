@@ -1,0 +1,12 @@
+/* 
+  Localizable.strings
+  ios-todoapp-swiftui
+
+  Created by Eszenyi Gábor on 2022. 02. 19..
+  
+*/
+
+"alert.error.title" = "Error";
+"alert.message.statusCode" = "Status code: %d";
+"alert.message.general" = "Something went wrong";
+"alert.error.button.ok" = "Ok";

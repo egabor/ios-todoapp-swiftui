@@ -9,122 +9,28 @@ import Foundation
 import Combine
 import TodoAppNetwork
 
-protocol LoadingCapable: AnyObject {
-    var isLoading: Bool { get set }
-}
-
-extension LoadingCapable {
-    func setLoadingOnMain(to value: Bool) {
-        DispatchQueue.main.async { [weak self] in
-            self?.isLoading = value
-        }
-    }
-}
-
-protocol ButtonLoadingCapable: AnyObject {
-    var isButtonLoading: Bool { get set }
-}
-
-extension ButtonLoadingCapable {
-    func setButtonLoadingOnMain(to value: Bool) {
-        DispatchQueue.main.async { [weak self] in
-            self?.isButtonLoading = value
-        }
-    }
-}
-
-protocol ErrorCapable: AnyObject {
-    var showError: Bool { get set }
-    var errorMessage: String { get set }
-}
-
-extension ErrorCapable {
-    func showErrorOnMain(message: String) {
-        DispatchQueue.main.async { [weak self] in
-            self?.errorMessage = message
-            self?.showError = true
-        }
-    }
-
-    func showNetworkErrorOnMain(error: TodoAppNetwork.Common.ErrorMessage.Response) {
-        DispatchQueue.main.async { [weak self] in
-            self?.errorMessage = "Status code: \(error.statusCode ?? -1)"
-            self?.showError = true
-        }
-    }
-
-    var errorAlertTitle: String {
-        "Error"
-    }
-
-    var errorAlertOkButtonTitle: String {
-        "Ok"
-    }
-}
-
-protocol TodoItemScreenViewModelProtocol: ObservableObject, ErrorCapable, LoadingCapable, ButtonLoadingCapable {
-
-    var showsDismissButton: Bool { get }
-    var showsDeleteButton: Bool { get }
-    var title: String { get }
-
-    var todoItemTitle: String { get set }
-    var todoItemDescription: String { get set }
-    var isCompleted: Bool { get set }
-    var dismiss: PassthroughSubject<Void, Never> { get }
-
-    var saveButtonTitle: String { get }
-
-    var showError: Bool { get set }
-    var errorMessage: String { get set }
-
-    var reloadCallback: () -> Void { get set }
-
-    func save()
-    func delete()
-}
-
-extension TodoItemScreenViewModelProtocol {
-
-    func reloadOnMain() {
-        DispatchQueue.main.async { [weak self] in
-            self?.reloadCallback()
-        }
-    }
-
-    func dismissOnMain() {
-        DispatchQueue.main.async { [weak self] in
-            self?.dismiss.send()
-        }
-    }
-}
-
-extension TodoItemScreenViewModelProtocol {
-    var titleTextFieldPlaceholder: String {
-        "Todo Title"
-    }
-
-    var deleteButtonTitle: String {
-        "Delete"
-    }
-}
-
-class CreateTodoItemScreenViewModel: TodoItemScreenViewModelProtocol {
+class CreateTodoItemScreenViewModel: TodoDetailsScreenViewModelProtocol {
     var showsDismissButton: Bool { true }
     var showsDeleteButton: Bool { false }
-    var title: String { "Create new" }
+    
+    var title: String { R.string.todoDetailsScreen.createTitle() }
+    var saveButtonTitle: String {  R.string.todoDetailsScreen.createButtonCreate() }
 
     @Published var todoItemTitle: String = ""
     @Published var todoItemDescription: String = ""
     @Published var isCompleted: Bool = false
+
+    // LoadingCapable
     @Published var isLoading: Bool = false
+
+    // ButtonLoadingCapable
     @Published var isButtonLoading: Bool = false
+
+    // ErrorCapable
     @Published var showError: Bool = false
     @Published var errorMessage: String = ""
 
     var dismiss: PassthroughSubject<Void, Never> = .init()
-
-    var saveButtonTitle: String { "Create" }
 
     var reloadCallback: () -> Void
 
@@ -151,6 +57,8 @@ class CreateTodoItemScreenViewModel: TodoItemScreenViewModelProtocol {
                 dismissOnMain()
             } catch let error as TodoAppNetwork.Common.ErrorMessage.Response {
                 showNetworkErrorOnMain(error: error)
+            } catch {
+                showErrorOnMain(message: R.string.localizable.alertMessageGeneral())
             }
             setButtonLoadingOnMain(to: false)
         }

@@ -1,0 +1,11 @@
+/* 
+ TodoListScreen.strings
+  ios-todoapp-swiftui
+
+  Created by Eszenyi Gábor on 2022. 02. 19..
+  
+*/
+
+"title" = "Todo Items";
+"button.showAllItems" = "Show All Items";
+"button.hideCompletedItems" = "Hide Completed Items";
